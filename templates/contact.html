@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <input style="display: none;" class="move1" type="text" value="move2">
+    <div class="container" >
+        <div >
+            {% with messages = get_flashed_messages(with_categories = True) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="{{ category }}">
+                            {{ message }}
+                        </div><br>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            
+            <form action="" method="POST">
+                {{ form.hidden_tag() }}
+                {{ form.name.label() }}<br><br>
+                {{ form.name(class="form-text") }}
+                <br><br>
+                {{ form.email.label() }}<br><br>
+                {% if form.email.errors %}
+                    {{ form.email(class="form-text field-is-invalid") }}
+                    {% for error in form.email.errors %} <br>
+                        <span style="color: #ff0000;">
+                            {{ error }}
+                        </span>
+                    {% endfor %}
+                {% else %}
+                    {{ form.email(class="form-text") }}
+                {% endif %}
+                <br><br>
+                {{ form.subject.label() }}<br><br>
+                {{ form.subject(class="form-text") }}
+                <br><br>
+                {{ form.message.label() }}<br><br>
+                {{ form.message(class="form-text form-textarea") }}
+                <br><br>
+                {{ form.submit(class="btn") }}
+            </form>
+        </div>
+    </div>
+{% endblock content %}

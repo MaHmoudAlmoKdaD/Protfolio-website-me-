@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web development, Content maker" />
+    <meta name="keywords" content="mahmoudalmokdad, mahmoud almokdad, web, web desginer,محمود, محمود المقداد, مطور ويب, Web development"/>
+    <!-- Bootstrap -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> -->
+    <!-- local css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <!-- local css for respinsive web-->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/styleMobile.css') }}"> <!--media="screen and (max-width:900px )"-->
+    <script src="../static/js/jquery-3.4.1.min.js"></script>
+    <script src="../static/js/javascript.js"></script>
+    {% if title %}
+        <title>{{ title }}</title>
+    {% endif %}
+</head>
+<body >
+
+         <!-- header page  -->
+        <header class="header">
+            <div class="color-from-top-10px"></div>
+            <div class="header-content">
+                <img src="../static/img/mahmoud.png" alt="" class="my_image">
+                <div class="info_about_me">
+                    <h2 ><a class="my-name" href="{{ url_for('home') }}"> Mahmoud Al-Mokdad</a></h2>
+                    <p class="p_color_info_about_me">Web developer, Content maker, Youtuber</p>
+                    <nav>
+                        <ul class="ul_links_my_media">
+                            <li><a href="https://github.com/MaHmoudAlmoKdaD" target="_blank"><img class="icon_image" src="../static/img/github.jpg" alt="link"></a></li>
+                            <li><a href="https://www.linkedin.com/in/mahmoudalmokdad/" target="_blank"><img class="icon_image" src="../static/img/linkedin.webp" alt="link"></a></li>
+                            <li><a href="{{ url_for('youtube') }}"><img class="icon_image" src="../static/img/youtube.webp" alt="link"></a></li>
+                            <li><a href="https://www.facebook.com/mahmod.almokdad/" target="_blank"><img class="icon_image" src="../static/img/facebook.webp" alt="link"></a></li>
+                            <li><a href="https://www.instagram.com/mahmoud_mokd/" target="_blank"><img class="icon_image" src="../static/img/instagram.webp" alt="link"></a></li>
+                            <li><a href="https://twitter.com/MahmouDHZY" target="_blank"><img class="icon_image" src="../static/img//twitter.webp" alt="link"></a></li>
+                        </ul>
+                    </nav>
+                    <aside>
+                        <ul class="contact-portfolio">
+                            <li><a href="{{ url_for('about') }}">About Me</a></li>
+                            <li><a href="{{ url_for('contact') }}">Contact Me</a></li>
+                            <li><a href="{{ url_for('portfolio') }}">skills</a></li>
+
+                        </ul>
+                    </aside>
+                </div>
+
+            </div>
+            <div class="color-from-top-10px"></div>
+            <!-- -----------navagiation bar---------------- -->
+            <!-- <nav class=" nav">
+                <ul>
+                    <li><a href="#">Development</a></li>
+                    <li><a href="{{ url_for('about') }}">About Me</a></li>
+                </ul>
+            </nav> -->
+            <!-- ----------end navigation bar-------------- -->
+        </header>
+
+         <!-- end header page  -->
+
+        <main>
+            <div>
+                {% block content %}
+
+                {% endblock content %}
+            </div>
+        </main>
+        <footer>
+            <div class="footer-content">
+                <div class="color-from-top-10px"></div>
+                <p>
+                    &copy; 2020 · Mahmoud AL-Mokdad
+               </p>
+               <div class="color-from-top-10px"></div>
+            </div>
+        </footer>
+        <script src="../static/js/jquery-3.4.1.min.js"></script>
+        <script src="../static/js/script.js"></script>
+  </body>
+</html>

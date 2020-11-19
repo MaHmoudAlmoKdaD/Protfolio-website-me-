@@ -1,0 +1,45 @@
+/*
+For responsive website :
+theme name:HTML5, CSS;
+DATE :30/6/2020;
+DESCRIPTION:FIRST WEBSITE;
+VERSION:1.0;
+AUTHOR:MAHMOUD ALMOKDAD;
+AUTHOR URL:HTTP://WWW.MAHMOUDALMOKDAD.COM;
+*/
+
+/* -------------the breakpoint is 9200px */
+@media screen and (max-width: 900px){
+    
+    body{
+        background-image: url('../img/background.jpg');
+         margin: 0 auto;
+    }
+/*------------ for header style mobile (responsive website ) -----------*/
+    .header{
+        height: 380px;
+    }
+    .my_image{
+        display: block;
+        margin: 0 auto;
+        float: none;   
+    }
+    .info_about_me{
+        display: block;
+        height: 100%;
+        padding: 0;
+        text-align: center;
+        margin-bottom: px;
+    }
+    .contact-portfolio{
+        display: block;
+        position: unset; 
+             
+    }
+/* ------------end header style--------------- */
+    .font-size{
+        font-size: medium;
+    }
+    
+
+}
