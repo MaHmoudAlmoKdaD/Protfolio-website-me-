@@ -22,7 +22,7 @@ def home():
 def contact():
     form = EmailForm()
     if form.validate_on_submit():
-        msg = Message(form.subject.data, sender='mahmoud.almokdad.technology.hang@gmail.com', recipients=['mahmoudalmokdadtechnology@gmail.com'])
+        msg = Message(form.subject.data, sender='sender@gmail.com', recipients=['recipient@gmail.com'])
         msg.body= f"""{form.email.data}
 {form.name.data}
 {form.message.data}"""
